@@ -47,4 +47,4 @@ card.innerHTML =
 
 servicesContainer.appendChild(card);
 
-);
+})
