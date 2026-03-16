@@ -1,51 +1,50 @@
-document.getElementById("site-title").innerText = SITE_CONFIG.name
-document.getElementById("logo").innerText = SITE_CONFIG.name
+document.getElementById("site-title").innerText = SITE_CONFIG.name;
+document.getElementById("logo").innerText = SITE_CONFIG.name;
 
-document.getElementById("hero-title").innerText = SITE_CONFIG.heroTitle
-document.getElementById("hero-subtitle").innerText = SITE_CONFIG.heroSubtitle
+document.getElementById("hero-title").innerText = SITE_CONFIG.heroTitle;
+document.getElementById("hero-subtitle").innerText = SITE_CONFIG.heroSubtitle;
 
-document.getElementById("about-text").innerText = SITE_CONFIG.aboutText
+document.getElementById("about-text").innerText = SITE_CONFIG.aboutText;
 
 
+/* CONTACT EMAILS */
 
-const contactContainer = document.getElementById("contact-email")
+const contactContainer = document.getElementById("contact-email");
 
 SITE_CONFIG.emails.forEach(email => {
 
-const line = document.createElement("p")
+const line = document.createElement("p");
 
 line.innerHTML =
 `<strong>${email.label}</strong><br>
-<a href="mailto:${email.address}">${email.address}</a>`
+<a href="mailto:${email.address}">${email.address}</a>`;
 
-contactContainer.appendChild(line)
+contactContainer.appendChild(line);
 
-})
+});
 
 
+/* FOOTER */
 
 document.getElementById("footer-text").innerText =
-"© " + new Date().getFullYear() + " " + SITE_CONFIG.name
+"© " + new Date().getFullYear() + " " + SITE_CONFIG.name;
 
 
+/* SERVICES */
 
-const servicesContainer = document.getElementById("services-container")
+const servicesContainer = document.getElementById("services-container");
 
 SITE_CONFIG.services.forEach(service => {
 
-const card = document.createElement("div")
-card.className = "service-card"
+const card = document.createElement("div");
+card.className = "service-card";
 
 card.innerHTML =
 `
 <h3>${service.title}</h3>
 <p>${service.description}</p>
-`
+`;
 
-servicesContainer.appendChild(card)
+servicesContainer.appendChild(card);
 
-})
-
-servicesContainer.appendChild(card)
-
-})
+});
