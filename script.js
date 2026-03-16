@@ -6,9 +6,24 @@ document.getElementById("hero-subtitle").innerText = SITE_CONFIG.heroSubtitle
 
 document.getElementById("about-text").innerText = SITE_CONFIG.aboutText
 
-document.getElementById("contact-email").innerText = SITE_CONFIG.email
 
-document.getElementById("footer-text").innerText = "© " + new Date().getFullYear() + " " + SITE_CONFIG.name
+
+const contactContainer = document.getElementById("contact-email")
+
+SITE_CONFIG.emails.forEach(email => {
+
+const line = document.createElement("p")
+
+line.innerHTML = `<strong>${email.label}:</strong> <a href="mailto:${email.address}">${email.address}</a>`
+
+contactContainer.appendChild(line)
+
+})
+
+
+
+document.getElementById("footer-text").innerText =
+"© " + new Date().getFullYear() + " " + SITE_CONFIG.name
 
 
 const servicesContainer = document.getElementById("services-container")
@@ -24,5 +39,7 @@ card.innerHTML = `
 `
 
 servicesContainer.appendChild(card)
+
+})
 
 })
