@@ -45,3 +45,7 @@ card.innerHTML =
 servicesContainer.appendChild(card)
 
 })
+
+servicesContainer.appendChild(card)
+
+})
