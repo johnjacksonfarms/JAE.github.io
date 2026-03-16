@@ -1,7 +1,7 @@
 const SITE_CONFIG = {
 
 name: "Jackson Applied Engineering",
-
+  
 heroTitle: "Engineering Solutions Built for the Real World",
 
 heroSubtitle:
