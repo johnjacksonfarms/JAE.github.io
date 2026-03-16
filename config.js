@@ -1,43 +1,50 @@
 const SITE_CONFIG = {
 
-name: "JAE",
+name: "Jackson Applied Engineering",
 
-heroTitle: "Modern Farm Innovation",
+heroTitle: "Engineering Solutions Built for the Real World",
 
-heroSubtitle: "Engineering, Fabrication, and Custom Solutions",
+heroSubtitle:
+"Custom Fabrication, Agricultural Innovation, and Precision Engineering.",
+
 
 aboutText:
-"JAE builds modern solutions for agriculture, fabrication, and engineering projects. Our mission is to combine precision manufacturing with practical real-world applications.",
+"Jackson Applied Engineering develops practical mechanical and agricultural solutions built for durability and real-world performance. From custom fabrication and CAD design to modern prototyping, and manufacturing, we help turn engineering ideas into reliable equipment and systems.",
+
 
 emails: [
 
 {
-label: "General Inquiries",
-address: "info@jacksonappliedengineering.com"
+label: "Project Inquiries",
+address: "projects@jacksonappliedengineering.com"
 },
 
 {
-label: "Project Inquiries",
-address: "sales@jacksonappliedengineering.com"
-},
+label: "General Inquiries",
+address: "info@jacksonappliedengineering.com"
+}
 
-]
+],
+
 
 services: [
 
 {
-title: "Custom Fabrication",
-description: "Precision fabricated components designed for durability and performance."
-},
-
-{
-title: "3D Printing",
-description: "Rapid prototyping and small batch manufacturing."
+title: "Automation",
+description:
+"Custom automation solutions to streamline workflows, increase efficiency, promote safety, and increase profits."
 },
 
 {
 title: "Engineering Design",
-description: "CAD design and mechanical solutions tailored to your project."
+description:
+"Mechanical CAD design and engineering development for new products and equipment."
+},
+
+{
+title: "3D Printing & Prototyping",
+description:
+"Rapid prototyping and custom manufacturing for testing and small batch production."
 }
 
 ]
