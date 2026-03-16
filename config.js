@@ -9,7 +9,19 @@ heroSubtitle: "Engineering, Fabrication, and Custom Solutions",
 aboutText:
 "JAE builds modern solutions for agriculture, fabrication, and engineering projects. Our mission is to combine precision manufacturing with practical real-world applications.",
 
-email: "contact@yourdomain.com",
+emails: [
+
+{
+label: "General Inquiries",
+address: "info@jacksonappliedengineering.com"
+},
+
+{
+label: "Project Inquiries",
+address: "sales@jacksonappliedengineering.com"
+},
+
+]
 
 services: [
 
