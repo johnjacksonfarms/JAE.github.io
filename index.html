@@ -1,27 +1,92 @@
-JAE
-Services Work About Get in Touch
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jackson Applied Engineering</title>
+  <meta name="description" content="Agricultural control systems, custom 3D printed parts, and mechanical engineering consulting in Indiana.">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
 
-Agricultural Engineering — Indiana
-Start a Project See Services
-What we do
-Services
-Recent work
-Portfolio
-More projects added as they're completed. Have a project in mind?
+  <header class="nav" id="nav">
+    <a href="#home" class="logo">JAE</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-Who we are
-Built for the field.
-Row crop farming Control systems Mechanical engineering 3D fabrication Indiana based
-Let's talk
-Start a project.
-Describe your problem and we'll figure out if we can solve it. No project is too small.
+  <section class="hero" id="home">
+    <div class="hero-eyebrow" id="hero-eyebrow">Agricultural Engineering — Indiana</div>
+    <h1 class="hero-title" id="hero-title"></h1>
+    <p class="hero-sub" id="hero-subtitle"></p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start a Project</a>
+      <a href="#services" class="btn-ghost">See Services</a>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
 
-JAE
-Indiana, USA
+  <section class="stats-bar" id="stats-bar"></section>
 
+  <section class="services" id="services">
+    <div class="section-label">What we do</div>
+    <h2 class="section-title">Services</h2>
+    <div class="services-grid" id="services-container"></div>
+  </section>
 
-<script src="config.js" defer></script>
-<script src="script.js" defer></script>
+  <section class="portfolio" id="portfolio">
+    <div class="section-label">Recent work</div>
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio-grid" id="portfolio-container"></div>
+    <p class="portfolio-note">More projects added as they're completed. <a href="#contact">Have a project in mind?</a></p>
+  </section>
 
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-left">
+        <div class="section-label">Who we are</div>
+        <h2 class="section-title">Built for the field.</h2>
+      </div>
+      <div class="about-right">
+        <p id="about-text"></p>
+        <div class="about-tags" id="about-tags">
+          <span>Row crop farming</span>
+          <span>Control systems</span>
+          <span>Mechanical engineering</span>
+          <span>3D fabrication</span>
+          <span>Indiana based</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-label">Let's talk</div>
+      <h2 class="section-title">Start a project.</h2>
+      <p class="contact-sub">Describe your problem and we'll figure out if we can solve it. No project is too small.</p>
+      <div class="contact-emails" id="contact-email"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">JAE</span>
+      <p id="footer-text"></p>
+      <span class="footer-loc">Indiana, USA</span>
+    </div>
+  </footer>
+
+  <script src="./config.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
