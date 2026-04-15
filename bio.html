@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bio — Jackson Applied Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #0a0a0a;
+      --offblack: #111111;
+      --panel:    #161616;
+      --border:   #222222;
+      --muted:    #555555;
+      --mid:      #888888;
+      --light:    #cccccc;
+      --white:    #f5f5f5;
+      --accent:   #c8a96e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ───────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 64px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--white); }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .hero {
+      padding: 160px 2.5rem 80px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 strong {
+      font-weight: 600;
+      display: block;
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .hero-blurb {
+      font-size: 1.15rem;
+      color: var(--light);
+      max-width: 620px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── SECTIONS ──────────────────────────────────────────── */
+    .section {
+      border-top: 1px solid var(--border);
+      padding: 80px 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3rem;
+    }
+
+    /* ── EDUCATION ─────────────────────────────────────────── */
+    .edu-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .edu-heading {
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .edu-heading strong {
+      display: block;
+      font-weight: 600;
+    }
+
+    .edu-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .edu-item {
+      border-left: 1px solid var(--border);
+      padding-left: 1.25rem;
+    }
+
+    .edu-item-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .edu-item-value {
+      font-size: 0.95rem;
+      color: var(--light);
+      font-weight: 400;
+    }
+
+    .edu-badge {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.4rem 0.85rem;
+      border-radius: 2px;
+    }
+
+    /* ── PILLARS ───────────────────────────────────────────── */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .pillar {
+      background: var(--offblack);
+      padding: 2rem 1.75rem;
+      transition: background 0.2s;
+    }
+
+    .pillar:hover { background: var(--panel); }
+
+    .pillar-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .pillar-body {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── CTA ───────────────────────────────────────────────── */
+    .cta-section {
+      border-top: 1px solid var(--border);
+      padding: 80px 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-text h2 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-text p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--white);
+      padding: 0.85rem 1.75rem;
+      text-decoration: none;
+      border-radius: 2px;
+      font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    footer span {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── FADE-IN ───────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 680px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .hero, .section, .cta-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .hero { padding-top: 120px; }
+      .edu-block { grid-template-columns: 1fr; gap: 2rem; }
+      .pillars { grid-template-columns: 1fr; }
+      .cta-section { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.jacksonappliedengineering.com" class="nav-logo">JAE</a>
+    <ul class="nav-links">
+      <li><a href="https://www.jacksonappliedengineering.com/#services">Services</a></li>
+      <li><a href="https://www.jacksonappliedengineering.com/#portfolio">Work</a></li>
+      <li><a href="bio.html" class="active">Bio</a></li>
+      <li><a href="https://www.jacksonappliedengineering.com/#contact">Get in Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-label fade-in">Who we are</p>
+    <h1 class="fade-in" style="transition-delay:0.1s">
+      John Jackson.
+      <strong>Engineer.<br>Farmer.<br>Problem solver.</strong>
+    </h1>
+    <div class="hero-divider fade-in" style="transition-delay:0.2s"></div>
+    <p class="hero-blurb fade-in" style="transition-delay:0.3s">
+      Growing up working the land instilled something that no classroom can teach — a relentless 
+      work ethic and an instinct for finding solutions under pressure. That foundation drives 
+      everything at JAE: practical engineering built for the real world, delivered by someone 
+      who isn't afraid to get their hands dirty.
+    </p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <p class="section-label fade-in">Education</p>
+    <div class="edu-block">
+      <div class="fade-in" style="transition-delay:0.1s">
+        <h2 class="edu-heading">
+          <strong>The Citadel</strong>
+          Military College of<br>South Carolina
+        </h2>
+        <div class="edu-badge">Class of 2026</div>
+      </div>
+      <div class="edu-details fade-in" style="transition-delay:0.2s">
+        <div class="edu-item">
+          <div class="edu-item-label">Degree</div>
+          <div class="edu-item-value">Bachelor of Science<br>Mechanical Engineering</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-item-label">Graduation</div>
+          <div class="edu-item-value">2026</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-item-label">Institution</div>
+          <div class="edu-item-value">Charleston, South Carolina</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT DRIVES ME -->
+  <section class="section">
+    <p class="section-label fade-in">What drives me</p>
+    <div class="pillars fade-in" style="transition-delay:0.1s">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Built to work.</div>
+        <div class="pillar-body">Raised in the fields of Indiana, hard work isn't a habit — it's a baseline. Every project gets full effort, no shortcuts.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Engineered to solve.</div>
+        <div class="pillar-body">Mechanical engineering trained me to break problems down and build solutions that last. Theory meets practice on every job.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Grounded in reality.</div>
+        <div class="pillar-body">No ivory tower thinking. JAE exists to solve real problems for real people — farms, shops, and the businesses that keep them running.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-text fade-in">
+      <h2>Start a project.</h2>
+      <p>Describe your problem and we'll figure out if we can solve it.</p>
+    </div>
+    <a href="https://www.jacksonappliedengineering.com/#contact" class="btn fade-in" style="transition-delay:0.1s">Get in Touch</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>JAE</span>
+    <span>Indiana, USA</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
