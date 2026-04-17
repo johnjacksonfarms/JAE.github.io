@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /* FOOTER */
   const footerText = document.getElementById('footer-text');
   if (footerText) {
-    footerText.innerText = '© ' + new Date().getFullYear() + ' ' + SITE_CONFIG.name + '. All rights reserved.';
+    footerText.innerText = '© ' + new Date().getFullYear() + ' ' + SITE_CONFIG.name + ', LLC. All rights reserved.';
   }
   /* SCROLL REVEAL */
   const reveals = document.querySelectorAll('.reveal');
