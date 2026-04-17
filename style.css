@@ -351,6 +351,7 @@ body {
   font-weight: 300;
 }
  
+/* PORTFOLIO STATUS BADGES */
 .portfolio-status {
   display: inline-block;
   margin-top: 20px;
@@ -359,9 +360,17 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 5px 12px;
+  border-radius: 3px;
+}
+
+.status-completed {
+  background: rgba(34, 120, 60, 0.10);
+  color: #2a7a3b;
+}
+
+.status-in-progress {
   background: rgba(200, 149, 42, 0.12);
   color: var(--gold);
-  border-radius: 3px;
 }
  
 .portfolio-note {
