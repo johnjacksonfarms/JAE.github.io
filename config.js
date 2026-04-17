@@ -48,6 +48,18 @@ const SITE_CONFIG = {
       category: "3D Printing",
       description: "Custom ASA replacement panel fabricated from measurements of an existing dash opening. UV stable and heat resistant for cab environments.",
       status: "completed"
+    },
+    {
+      title: "Grain Bin Level Monitor",
+      category: "Control Systems",
+      description: "LiDAR-based grain level sensing system for grain bins. Reads the fill level in real time and displays status via a red, yellow, and green tower light stack — giving operators an instant visual read from across the yard.",
+      status: "in-progress"
+    },
+    {
+      title: "Bin Temperature & Humidity Controller",
+      category: "Control Systems",
+      description: "Temperature and humidity monitoring system that automatically cycles bin aeration fans on and off based on ambient conditions. Designed to bring stored crop toward a target moisture level and protect grain quality through the season.",
+      status: "in-progress"
     }
   ],
  
@@ -59,4 +71,3 @@ const SITE_CONFIG = {
   ]
  
 }
- 
