@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — Jackson Applied Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #0a0a0a;
+      --offblack: #111111;
+      --border:   #222222;
+      --muted:    #555555;
+      --mid:      #888888;
+      --light:    #cccccc;
+      --white:    #f5f5f5;
+      --accent:   #c8a96e;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 64px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 2.5rem 0;
+    }
+
+    .content {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .check {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .check::before {
+      content: '✓  ';
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.1s forwards;
+    }
+
+    h1 strong { font-weight: 600; }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.2s forwards;
+    }
+
+    .keyword-list {
+      list-style: none;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.3s forwards;
+    }
+
+    .keyword-list li {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--light);
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: -0.01em;
+    }
+
+    .keyword-list li:first-child { border-top: 1px solid var(--border); }
+
+    .btn-wrap {
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.4s forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--white);
+      padding: 0.85rem 1.75rem;
+      text-decoration: none;
+      border-radius: 2px;
+      font-weight: 700;
+      transition: background 0.2s;
+      margin-right: 1rem;
+    }
+
+    .btn:hover { background: var(--accent); }
+
+    .btn-ghost {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 0.85rem 0;
+      text-decoration: none;
+      border-radius: 2px;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--white); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+
+    footer span {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 680px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      main { padding: 80px 1.25rem 0; }
+      footer { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.jacksonappliedengineering.com" class="nav-logo"><img src="JAE_logo.png" alt="Jackson Applied Engineering, LLC" style="height:38px;width:auto;display:block;border-radius:50%;"></a>
+    <ul class="nav-links">
+      <li><a href="https://www.jacksonappliedengineering.com/#services">Services</a></li>
+      <li><a href="https://www.jacksonappliedengineering.com/#portfolio">Work</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="https://www.jacksonappliedengineering.com/#contact">Get in Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <div class="content">
+      <p class="check">Order confirmed</p>
+      <h1><strong>Thank you</strong><br>for your order.</h1>
+      <div class="divider"></div>
+      <ul class="keyword-list">
+        <li>Payment received</li>
+        <li>Order is being processed</li>
+        <li>You'll hear from us soon</li>
+      </ul>
+      <div class="btn-wrap">
+        <a href="shop.html" class="btn">Back to Shop</a>
+        <a href="https://www.jacksonappliedengineering.com" class="btn-ghost">Go to JAE →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="JAE_logo.png" alt="Jackson Applied Engineering, LLC" style="height:28px;width:auto;border-radius:50%;">
+    <span>Jackson Applied Engineering, LLC &nbsp;·&nbsp; Indiana, USA</span>
+  </footer>
+
+</body>
+</html>
