@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
   /* NAV SCROLL */
   const nav = document.getElementById('nav');
   if (nav) {
@@ -7,11 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     });
   }
-
   /* MOBILE HAMBURGER */
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
-
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('open');
@@ -20,13 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   }
-
   /* HERO */
   const heroTitle = document.getElementById('hero-title');
   const heroSub = document.getElementById('hero-subtitle');
   if (heroTitle) heroTitle.innerText = SITE_CONFIG.heroTitle;
   if (heroSub) heroSub.innerText = SITE_CONFIG.heroSubtitle;
-
   /* STATS BAR */
   const statsBar = document.getElementById('stats-bar');
   if (statsBar && SITE_CONFIG.stats) {
@@ -37,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
       statsBar.appendChild(item);
     });
   }
-
   /* SERVICES */
   const servicesContainer = document.getElementById('services-container');
   if (servicesContainer && SITE_CONFIG.services) {
@@ -52,27 +46,27 @@ document.addEventListener('DOMContentLoaded', function() {
       servicesContainer.appendChild(card);
     });
   }
-
   /* PORTFOLIO */
   const portfolioContainer = document.getElementById('portfolio-container');
   if (portfolioContainer && SITE_CONFIG.portfolio) {
     SITE_CONFIG.portfolio.forEach(item => {
+      const isCompleted = item.status === 'completed';
+      const statusLabel = isCompleted ? 'Completed' : 'In Progress';
+      const statusClass = isCompleted ? 'status-completed' : 'status-in-progress';
       const card = document.createElement('div');
       card.className = 'portfolio-card reveal';
       card.innerHTML = `
         <span class="portfolio-category">${item.category}</span>
         <div class="portfolio-title">${item.title}</div>
         <p class="portfolio-desc">${item.description}</p>
-        <span class="portfolio-status">${item.status}</span>
+        <span class="portfolio-status ${statusClass}">${statusLabel}</span>
       `;
       portfolioContainer.appendChild(card);
     });
   }
-
   /* ABOUT */
   const aboutText = document.getElementById('about-text');
   if (aboutText) aboutText.innerText = SITE_CONFIG.aboutText;
-
   /* CONTACT */
   const contactContainer = document.getElementById('contact-email');
   if (contactContainer && SITE_CONFIG.emails) {
@@ -86,13 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
       contactContainer.appendChild(block);
     });
   }
-
   /* FOOTER */
   const footerText = document.getElementById('footer-text');
   if (footerText) {
     footerText.innerText = '© ' + new Date().getFullYear() + ' ' + SITE_CONFIG.name + '. All rights reserved.';
   }
-
   /* SCROLL REVEAL */
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length > 0) {
@@ -106,5 +98,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
   }
-
 });
