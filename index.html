@@ -3,28 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jackson Applied Engineering</title>
+  <title>Jackson Applied Engineering, LLC</title>
   <meta name="description" content="Agricultural control systems, custom 3D printed parts, and mechanical engineering consulting in Indiana.">
   <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header class="nav" id="nav">
-    <a href="#home" class="logo">JAE</a>
+    <a href="#home" class="logo">
+      <img src="JAE_logo.png" alt="Jackson Applied Engineering, LLC" style="height:36px;width:auto;display:block;border-radius:50%;">
+    </a>
     <nav class="nav-links" id="nav-links">
       <a href="#services">Services</a>
       <a href="#portfolio">Work</a>
       <a href="#about">About</a>
       <a href="/bio.html">Bio</a>
+      <a href="/shop.html">Shop</a>
       <a href="#contact" class="nav-cta">Get in Touch</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </header>
-
   <section class="hero" id="home">
     <div class="hero-eyebrow" id="hero-eyebrow">Agricultural Engineering — Indiana</div>
     <h1 class="hero-title" id="hero-title"></h1>
@@ -35,22 +36,18 @@
     </div>
     <div class="hero-rule"></div>
   </section>
-
   <section class="stats-bar" id="stats-bar"></section>
-
   <section class="services" id="services">
     <div class="section-label">What we do</div>
     <h2 class="section-title">Services</h2>
     <div class="services-grid" id="services-container"></div>
   </section>
-
   <section class="portfolio" id="portfolio">
     <div class="section-label">Recent work</div>
     <h2 class="section-title">Portfolio</h2>
     <div class="portfolio-grid" id="portfolio-container"></div>
     <p class="portfolio-note">More projects added as they're completed. <a href="#contact">Have a project in mind?</a></p>
   </section>
-
   <section class="about" id="about">
     <div class="about-inner">
       <div class="about-left">
@@ -69,7 +66,6 @@
       </div>
     </div>
   </section>
-
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="section-label">Let's talk</div>
@@ -78,15 +74,13 @@
       <div class="contact-emails" id="contact-email"></div>
     </div>
   </section>
-
   <footer>
     <div class="footer-inner">
-      <span class="footer-logo">JAE</span>
+      <img src="JAE_logo.png" alt="Jackson Applied Engineering, LLC" style="height:28px;width:auto;display:block;border-radius:50%;opacity:0.4;">
       <p id="footer-text"></p>
       <span class="footer-loc">Indiana, USA</span>
     </div>
   </footer>
-
   <script src="./config.js"></script>
   <script src="./script.js"></script>
 </body>
