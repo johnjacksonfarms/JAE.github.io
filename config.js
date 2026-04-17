@@ -1,6 +1,6 @@
 const SITE_CONFIG = {
  
-  name: "Jackson Applied Engineering",
+  name: "Jackson Applied Engineering, LLC",
   tagline: "Built for the Field.",
  
   heroTitle: "Control Systems & Custom Fabrication for Agriculture",
